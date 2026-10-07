@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="referrer" content="no-referrer">
+  <title>Finishing TikTok sign-in</title>
+  <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+  <main>
+    <h1>Finishing sign-in…</h1>
+    <p>
+      Sending you back to the TikTok Autopost dashboard on this computer. If nothing happens, make sure
+      the service is running, then <a id="manual" href="#">continue to the dashboard</a>.
+    </p>
+  </main>
+  <script>
+    // TikTok can't redirect to localhost, so it lands here and we forward the login code
+    // to the service running on this computer. Change the port if you changed PORT in .env.
+    const LOCAL_CALLBACK = "http://localhost:3000/auth/tiktok/callback";
+    const target = LOCAL_CALLBACK + location.search;
+    document.getElementById("manual").href = target;
+    location.replace(target);
+  </script>
+</body>
+</html>

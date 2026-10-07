@@ -1,0 +1,18 @@
+:root { --paper: #e8ede9; --ink: #1f2a44; --soft: #55607a; --link: #3550c8; }
+@media (prefers-color-scheme: dark) {
+  :root { --paper: #151b22; --ink: #e4e9ef; --soft: #9aa6b6; --link: #8199ff; }
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: "Familjen Grotesk", system-ui, sans-serif;
+  line-height: 1.6;
+}
+main { max-width: 42rem; margin: 0 auto; padding: 3rem 1rem 4rem; }
+h1 { font-size: 2.2rem; line-height: 1.1; letter-spacing: -0.02em; margin: 0 0 1rem; }
+h2 { font-size: 1.2rem; margin: 2rem 0 0.5rem; }
+a { color: var(--link); }
+.meta { color: var(--soft); font-size: 0.9rem; }
+nav { display: flex; gap: 1.25rem; margin-top: 2.5rem; }
